@@ -1,19 +1,8 @@
-# Diretórios de IDE
-.idea/
-.vscode/
-*.iml
-
-# Build Maven
 target/
-!target/backend-sylkflix-0.0.1-SNAPSHOT.jar
-
-# Sistema
-.DS_Store
-Thumbs.db
-
-# Git
 .git
 .gitignore
-
-# Logs
-*.log
+Dockerfile
+README.md
+*.md
+.idea/
+*.iml
