@@ -1,16 +1,19 @@
-FROM eclipse-temurin:17-jdk-focal
+FROM eclipse-temurin:17-jdk-focal AS build
 
 WORKDIR /app
-
-COPY pom.xml ./
+COPY pom.xml .
 COPY src ./src
 
 RUN apt-get update && apt-get install -y maven \
-    && mvn clean package -DskipTests \
-    && apt-get remove -y maven \
-    && rm -rf /var/lib/apt/lists/*
+    && mvn -B -DskipTests clean package
 
-COPY target/backend-sylkflix-0.0.1-SNAPSHOT.jar app.jar
+
+# ======= RUNTIME IMAGE =======
+FROM eclipse-temurin:17-jre-focal
+
+WORKDIR /app
+
+COPY --from=build /app/target/backend-sylkflix-0.0.1-SNAPSHOT.jar app.jar
 
 EXPOSE 8080
 

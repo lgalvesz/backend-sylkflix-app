@@ -1,39 +1,15 @@
-# ===============================
-# Build
-# ===============================
-/target/
-*.class
-
-# ===============================
-# IDEs
-# ===============================
-# IntelliJ IDEA
-/.idea/
-/*.iml
-/out/
-
-# VS Code (caso use)
+# Eclipse/IntelliJ
+*.iml
+.idea/
 .vscode/
 
-# Eclipse (caso use)
-.project
-.classpath
-.settings/
+# Maven
+target/*.class
+!target/backend-sylkflix-0.0.1-SNAPSHOT.jar
 
-# ===============================
 # Logs
-# ===============================
 *.log
 
-# ===============================
-# Arquivos do sistema
-# ===============================
+# OS
 .DS_Store
 Thumbs.db
-
-# ===============================
-# Arquivos de ambiente / secrets locais
-# ===============================
-# Caso use arquivos de configuração local, variáveis de ambiente ou credenciais
-application-local.properties
-.env
