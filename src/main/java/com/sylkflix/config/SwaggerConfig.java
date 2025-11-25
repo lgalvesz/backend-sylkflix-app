@@ -41,7 +41,7 @@ public class SwaggerConfig {
                                 .url("http://localhost:" + serverPort)
                                 .description("Servidor de Desenvolvimento"),
                         new Server()
-                                .url("https://seu-app.onrender.com")
+                                .url("https://backend-sylkflix-app.onrender.com")
                                 .description("Servidor de Produção (Render)")
                 ))
                 .addSecurityItem(new SecurityRequirement().addList(securitySchemeName))
